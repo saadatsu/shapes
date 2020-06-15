@@ -5,11 +5,13 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 //the program allows to create shapes, move them, delete them, and see their properties
+// add new button for a new shape
+// integrate the new shaoe class to main class
 
 public class Main extends JFrame {
     ArrayList<Shape> shapes = new ArrayList<>();
     private JPanel buttons;
-    private JButton rec, cir;
+    private JButton rec, cir, cross;
     Shape selected = null;
     int prevMouseX, prevMouseY;
     boolean dragged = false;
