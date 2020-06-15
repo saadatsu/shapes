@@ -100,9 +100,11 @@ public class Main extends JFrame {
         buttons = new JPanel();
         rec = new JButton("Rectangle");
         cir = new JButton("Circle");
+        cross = new JButton("Cross");
         buttons.setLayout(new GridLayout(1, 3));
         buttons.add(cir);
         buttons.add(rec);
+        buttons.add(cross);
 
         rec.addActionListener(e -> {
             int x = (int) (Math.random() * getWidth());
@@ -119,6 +121,16 @@ public class Main extends JFrame {
             int y = (int) (Math.random() * getHeight());
             int radius = (int) (Math.random() * 50);
             shapes.add(new Circle(x, y, radius));
+            canvas.requestFocus();
+            repaint();
+        });
+
+        cross.addActionListener(e -> {
+            int x = (int) (Math.random() * getWidth());
+            int y = (int) (Math.random() * getHeight());
+            int width = (int) (Math.random() * 100);
+            int height = (int) (Math.random() * 100);
+            shapes.add(new Cross(x, y, width, height));
             canvas.requestFocus();
             repaint();
         });
